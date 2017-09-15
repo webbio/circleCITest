@@ -6,6 +6,8 @@ general:
 machine:
   timezone:
     Europe/Amsterdam
+  node:
+    version: 6.0.0
   python:
     version: 2.7.10
 
@@ -16,7 +18,9 @@ dependencies:
     # Turn an environment variable into a vault file that ansible can read
     - cd ../trellis && echo "${ANSIBLE_VAULT_PASSWORD}" > .vault_pass
   # This _should_ be inferred by Circle CI as we specify a node version but for some reason, it never ran for me. This tells it explicitly to run.
-
+  override:
+    - npm install
+    
 # Deployment Scenarios
 deployment:
   staging:
