@@ -22,6 +22,6 @@ deployment:
   staging:
     branch: master
     commands:
-      - ansible-playbook server.yml -e env=staging
+      - cd ../trellis && ansible-playbook server.yml -e env=staging
       # This is just an ansible playbook command with some options to specify where the host file is located and that we want to skip tasks with the tag `skip-using-ci`
       # - cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
