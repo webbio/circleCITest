@@ -1,0 +1,32 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    working_directory: site
+
+    timezone:
+      Europe/Amsterdam
+    node:
+      version: 6.0.0
+    python:
+      version: 2.7.10
+
+
+    steps:
+      - Install dependencies
+        - run:
+            name: Install Gulp
+            command: npm install gulp -g
+        - run:
+            name: Install Bower
+            command: npm install bower -g
+        - run:
+            name: Install Ansible
+            command: pip install ansible
+    
+      - deploy:
+          command: cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
+
