@@ -13,20 +13,22 @@ jobs:
       version: 6.0.0
     python:
       version: 2.7.10
-
+    
+    branches:
+      only:
+        - master
 
     steps:
-      - Install dependencies
+      - dependencies
         - run:
-            name: Install Gulp
+            name: "Install Gulp"
             command: npm install gulp -g
         - run:
-            name: Install Bower
+            name: "Install Bower"
             command: npm install bower -g
         - run:
-            name: Install Ansible
+            name: "Install Ansible"
             command: pip install ansible
-    
       - deploy:
           command: cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
 
