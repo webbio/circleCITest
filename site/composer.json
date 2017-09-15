@@ -31,10 +31,6 @@
       "type": "composer",
       "url": "https://wpackagist.org"
     },
-    {
-      "type": "composer",
-      "url": "https://premium.wpmudev.org/"
-    }
   ],
   "require": {
     "php": ">=5.6",
@@ -53,10 +49,6 @@
     "wpackagist-plugin/simple-custom-post-order": "2.3.2",
     "wpackagist-plugin/multisite-clone-duplicator": "1.4.1",
     "wpackagist-plugin/404page": "3.1",
-    "wpmudev/wpmu-dev-dashboard": "4.3.1",
-    "wpmudev/wp-smush-pro": "2.7.4",
-    "wpmudev/wp-hummingbird": "1.5.5",
-    "wpmudev/wp-defender": "1.6.2",
     "wpackagist-plugin/intercom": "2.5.16",
     "wpackagist-plugin/usersnap": "4.5",
     "wpackagist-plugin/real-time-validation-for-gravity-forms": "1.1.0"
