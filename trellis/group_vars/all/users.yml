@@ -7,18 +7,12 @@ users:
     groups:
       - "{{ web_group }}"
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      - https://github.com/nicklouwers.keys
-      - https://github.com/awekh.keys
-      - https://github.com/userhooke.keys
+      - https://github.com/joerismits.keys
   - name: "{{ admin_user }}"
     groups:
       - sudo
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      - https://github.com/nicklouwers.keys
-      - https://github.com/awekh.keys
-      - https://github.com/userhooke.keys
+      - https://github.com/joerismits.keys
 web_user: web
 web_group: www-data
 web_sudoers:
