@@ -10,7 +10,7 @@ wordpress_sites:
           - www.webbio-staging.nl
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@github.com:webbio/circleCITest.git # replace with your Git repo URL
-    subtree: site
+    repo_subtree_path: site/
     branch: master
     multisite:
       enabled: true
