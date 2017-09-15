@@ -1,0 +1,22 @@
+# Documentation: https://roots.io/trellis/docs/remote-server-setup/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites
+# Define accompanying passwords/secrets in group_vars/production/vault.yml
+
+wordpress_sites:
+  webbio-staging.nl:
+    site_hosts:
+      - canonical: webbio-staging.nl
+        redirects:
+          - www.webbio-staging.nl
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:webbio/webbionl.git # replace with your Git repo URL
+    branch: develop
+    multisite:
+      enabled: true
+      subdomains: false
+    ssl:
+      enabled: true
+      provider: letsencrypt
+    cache:
+      enabled: true
+      duration: 30s

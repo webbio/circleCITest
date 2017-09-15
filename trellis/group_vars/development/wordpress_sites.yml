@@ -1,0 +1,20 @@
+# Documentation: https://roots.io/trellis/docs/local-development-setup/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites
+# Define accompanying passwords/secrets in group_vars/development/vault.yml
+
+wordpress_sites:
+  webbio.dev:
+    site_hosts:
+      - canonical: webbio.dev
+        redirects:
+          - www.webbio.dev
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_email: dev@webbio.nl
+    multisite:
+      enabled: true
+      subdomains: false
+    ssl:
+      enabled: true
+      provider: self-signed
+    cache:
+      enabled: false
