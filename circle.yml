@@ -20,7 +20,9 @@ dependencies:
   # This _should_ be inferred by Circle CI as we specify a node version but for some reason, it never ran for me. This tells it explicitly to run.
   override:
     - npm install
-    
+    - npm install gulp -g
+    - npm install bower -g
+
 # Deployment Scenarios
 deployment:
   staging:
