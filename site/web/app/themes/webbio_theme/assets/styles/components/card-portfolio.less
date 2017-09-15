@@ -1,0 +1,123 @@
+.hook-card-misc() {
+
+  .uk-card-portfolio {
+    .uk-box-shadow {
+      box-shadow: 0 12px 24px rgba(0,0,0,.05);
+    }
+
+    &:nth-child(2n) {
+      @media (min-width: @breakpoint-small) {
+        margin-top: 50px;
+      }
+    }
+    .uk-card-media-body {
+      background: @snow-white;
+      position: relative;
+      .uk-card-body {
+        transition: opacity .3s ease 0s;
+        h2 {
+          a {
+            color: @global-blackcurrant;
+          }
+        }
+      }
+      .uk-card-content {
+        display: flex;
+        justify-content: space-between;
+      }
+      .uk-quote-hover {
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity .3s ease 0s;
+        >a:hover {
+          text-decoration: none;
+        }
+        .uk-card-title {
+          font-size: 18px;
+          @media (max-width: @breakpoint-medium) {
+            font-size: 18px;
+            top: -80%;
+          }
+        }
+        .uk-card-content {
+          flex-direction: column;
+          justify-content: flex-start;
+          span:nth-child(1){
+            color: @global-blackcurrant;
+          }
+          span:nth-child(2) {
+            color: @shady-lady;
+          }
+        }
+      }
+    }
+    .uk-card-image {
+      div {
+        padding: 0 0 100%;
+        .uk-image-hover {
+          width: 0;
+          height: 0;
+          border-bottom: 0px solid #fff;
+          border-right: 150vw solid transparent;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: border-bottom-width .3s ease 0s;
+          &.uk-style-hover {
+            left: auto;
+            right: 0;
+            border-right: 100vw solid transparent;
+          }
+        }
+        img {
+          object-fit:cover;
+        }
+      }
+    }
+    .uk-image-quote-hover {
+      opacity: 0;
+      transition: opacity .5s ease 0s;
+    }
+    .uk-image-quote-static {
+      opacity: 1;
+      transition: opacity .5s ease 0s;
+    }
+    &:hover .uk-image-quote-hover {
+      opacity: 1;
+    }
+    &:hover .uk-image-quote-static {
+      opacity: 0;
+    }
+    &:hover .uk-hover-static {
+      @media (min-width: @breakpoint-small) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .uk-hover-static {
+      h2 {
+        margin:0 0 5px;
+      }
+    }
+
+      &:hover .uk-quote-hover {
+        @media (min-width: @breakpoint-small) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &:hover div .uk-image-hover {
+        @media (min-width: @breakpoint-small) {
+          border-bottom-width: 140px;
+      }
+    }
+  }
+  .portfolio .uk-card-portfolio .uk-card-body {
+    @media (max-width: @breakpoint-small) {
+      padding: 20px 0;
+    }
+  }
+
+}

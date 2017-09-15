@@ -1,0 +1,14 @@
+<div class="uk-section uk-section-portfolio-cta uk-padding-remove-top">
+  <div class="uk-container">
+    <div class="uk-section-header uk-text-center">
+      <div class="uk-section-title">{{ post.get_field('cta_simple_cta_titel') }}</div>
+    </div>
+    <div class="uk-section-actions uk-text-center">
+      <a class="uk-button uk-button-default uk-margin-remove-top {{ intercom|default('') }}" href="{{ post.get_field('cta_simple_cta_button_url') }}" target="{{ post.get_field('cta_simple_cta_button_target') }}">
+        {% if icon %}
+          <span class="icon-chat"></span>
+        {% endif %}
+        {{ post.get_field('cta_simple_cta_button_tekst') }}</a>
+    </div>
+  </div>
+</div>

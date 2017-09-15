@@ -1,0 +1,27 @@
+{%  if post.get_field('portfolio_quote_quote_tekst') %}
+<div class="uk-section uk-section-testimonials">
+  <div class="uk-section-background" style="background-image: url('{{ post.get_field('portfolio_quote_achtergrond') }}')">
+  </div>
+  <div class="uk-section-foreground">
+    <div class="uk-section-body">
+      <div class="uk-container uk-container-small">
+        <div class="uk-section-wrap">
+          <div class="uk-section-photo">
+            <div class="uk-clip-polygon" style="background-image: url('{{ post.get_field('portfolio_quote_foto_klant') }}')">
+            </div>
+          </div>
+          <div class="uk-section-content">
+            <div class="uk-section-description">
+              {{ post.get_field('portfolio_quote_quote_tekst') }}
+            </div>
+            <div class="uk-section-data">
+              <div class="uk-author">{{ post.get_field('portfolio_quote_naam_klant') }}</div>
+              <div class="uk-type">{{ post.get_field('portfolio_quote_functie_klant') }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

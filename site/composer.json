@@ -1,0 +1,83 @@
+{
+  "name": "roots/bedrock",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }
+  ],
+  "keywords": [
+    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://premium.wpmudev.org/"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "~1.2.0",
+    "vlucas/phpdotenv": "^2.0.1",
+    "johnpbloch/wordpress": "4.8.1",
+    "oscarotero/env": "^1.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "roots/wp-stage-switcher": "2.0.0",
+    "wpackagist-plugin/wordpress-seo": "5.2",
+    "wpackagist-plugin/cookie-notice": "1.2.38",
+    "wpackagist-plugin/timber-library": "1.4.1",
+    "wpackagist-plugin/debug-bar-timber": "0.3",
+    "wpackagist-plugin/wp-migrate-db": "1.0",
+    "wpackagist-plugin/duracelltomi-google-tag-manager": "1.7.1",
+    "wpackagist-plugin/simple-custom-post-order": "2.3.2",
+    "wpackagist-plugin/multisite-clone-duplicator": "1.4.1",
+    "wpackagist-plugin/404page": "3.1",
+    "wpmudev/wpmu-dev-dashboard": "4.3.1",
+    "wpmudev/wp-smush-pro": "2.7.4",
+    "wpmudev/wp-hummingbird": "1.5.5",
+    "wpmudev/wp-defender": "1.6.2",
+    "wpackagist-plugin/intercom": "2.5.16",
+    "wpackagist-plugin/usersnap": "4.5",
+    "wpackagist-plugin/real-time-validation-for-gravity-forms": "1.1.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.5.1"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "vendor/bin/phpcs"
+    ]
+  }
+}

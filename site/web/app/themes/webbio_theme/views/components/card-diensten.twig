@@ -1,0 +1,31 @@
+<div class="uk-card">
+  <div class="uk-card-media-body">
+    <div class="uk-card-content-top">
+      <div class="uk-card-media-top">
+        <img src="{{ item.icon }}" alt="">
+      </div>
+      <div class="uk-card-body">
+        <h2 class="uk-card-title">{{ item.title }}</h2>
+        <div class="uk-card-content">{{ item.content }}</div>
+      </div>
+    </div>
+    {% set first_item = diensten_item[0].diensten[0].ID %}
+    <div class="uk-card-content-bottom">
+      <ul uk-accordion>
+        {% for item in item.diensten %}
+          {% if first_item == item.ID%}
+          <li class="uk-open">
+            <span class="uk-accordion-title">{{ item.post_title }}</span>
+            <div class="uk-accordion-content">{{ item.post_content }}</div>
+          </li>
+        {% else %}
+          <li>
+            <span class="uk-accordion-title">{{ item.post_title }}</span>
+            <div class="uk-accordion-content">{{ item.post_content }}</div>
+          </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

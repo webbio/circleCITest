@@ -1,0 +1,22 @@
+<div class="uk-section uk-section-single uk-padding-remove-bottom">
+  <div class="uk-section-header">
+    <div class="uk-container">
+      <div class="uk-section-title">
+        <h1 class="uk-h1">
+          <div>{{ post.get_field('header_3_titel') }}</div>
+        </h1>
+      </div>
+      <div class="uk-section-subtitle uk-width-1-2@m">
+        {{ post.get_field('header_3_sub_titel') }}
+      </div>
+    </div>
+  </div>
+  <div class="uk-section-image">
+    <div class="uk-clip-polygon" style="background-image: url('{{ post.get_field('header_afbeelding') }}')"></div>
+      <div class="uk-container">
+        <div class="uk-section-logo">
+          <img class="lazy" data-src="{{ post.get_field('header_logo') }}" alt="{{ post.get_field('header_3_titel') }}">
+      </div>
+    </div>
+  </div>
+</div>

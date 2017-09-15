@@ -1,0 +1,42 @@
+<div class="uk-section uk-section-whitepaper">
+  <div class="uk-container">
+    <div class="uk-child-width-1-2@s uk-flex uk-flex-bottom" uk-grid>
+      <div>
+        <div class="uk-section-header">
+          <div class="uk-section-subtitle">{{ post.get_field('whitepaper_sub_titel') }}</div>
+          <div class="uk-section-title">{{ post.get_field('whitepaper_titel') }}</div>
+        </div>
+        <div class="uk-section-description">
+          {{ post.get_field('whitepaper_tekst') }}
+        </div>
+        <div class="uk-section-footer">
+          <a target="{{ post.get_field('whitepaper_cta_target') }}" href="#modal-center" uk-toggle>
+            <img class="uk-preserve" src="{{ post.get_field('whitepaper_pdf_illustratie') }}" alt="" uk-svg>
+            <img class="uk-preserve uk-icon-ie" src="{{ theme.link }}/assets/images/download-pdf-IE.svg" uk-svg alt="" >
+            <div class="uk-download">
+              <div class="uk-download-title">{{ post.get_field('whitepaper_cta_titel') }}</div>
+              <div class="uk-download-subtitle">{{ post.get_field('whitepaper_cta_sub_titel') }}</div>
+            </div>
+          </a>
+        </div>
+    </div>
+      <div class="uk-image-right uk-visible@s">
+        <img class="lazy uk-img-hidden" data-src="{{ post.get_field('whitepaper_afbeelding_rechts') }}" alt="">
+      </div>
+    </div>
+  </div>
+  <div id="modal-center" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Contactformulier</h2>
+      <div>
+        {% filter shortcodes %}
+          [gravityform id="2" title="false" description="false" ajax="true"]
+        {% endfilter %}
+        <a href="{{ post.get_field('whitepaper_cta_url') }}" target="{{ post.get_field('whitepaper_cta_target') }}" class="uk-pdf-download uk-hidden">Open document</a>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="uk-section uk-section-portfolio-website uk-background-muted uk-padding-remove-bottom">
+  <div class="uk-container">
+    <div class="uk-child-width-1-2@s" uk-grid>
+      <div>
+        <div class="uk-sticky" uk-sticky="bottom: true; offset: 100; media: 640"">
+          <div class="uk-section-header">
+            <h2 class="uk-margin-medium-bottom">{{ post.get_field('portfolio_website_titel') }}</>
+          </div>
+          <div class="uk-section-description">
+            {{ post.get_field('portfolio_website_tekst') }}
+          </div>
+          <div class="uk-section-footer" uk-sticky="offset: 60;">
+            <ul class="uk-tab uk-background-muted" uk-tab="connect: #uk-tab-content">
+              <li class="uk-active"><a href="#"><span class="icon-desktop"></span>{{ post.get_field('portfolio_website_label_tab_desktop') }}</a></li>
+              <li><a href="#"><span class="icon-mobile"></span>{{ post.get_field('portfolio_website_label_tab_mobiel') }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="uk-image-right">
+        <ul id="uk-tab-content" class="uk-switcher">
+          <li><img class="lazy-stick" src="{{ post.get_field('portfolio_website_afbeelding_desktop') }}" alt=""></li>
+          <li class="uk-mobile-screen"><img class="lazy-stick" src="{{ post.get_field('portfolio_website_afbeelding_mobiel') }}" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div id="uk-stiky-bottom"></div>

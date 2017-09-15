@@ -1,0 +1,125 @@
+{% include 'partials/header.twig' %}
+
+<main class="uk-main">
+
+  <!-- Posts with Terms https://github.com/timber/timber/wiki/TimberTerm#posts-with-terms -->
+  <div class="uk-container uk-margin-large">
+    {% for cat in example_posts_category %}
+      {% set term = TimberTerm(cat.id) %}
+      <h3>Posts with Terms "{{term.name}}"</h3>
+      {% for post in term.get_posts %}
+        <a href="{{ post.link }}">{{post.title}}</a>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <!-- Displaying Terms https://github.com/timber/timber/wiki/TimberTerm#displaying-terms -->
+  <div class="uk-container uk-margin-large">
+    <h2>Displaying Terms</h2>
+    <ul class="uk-tab">
+      {% for cat in example_posts_category %}
+        <li><a href="{{cat.link}}">{{cat.name}}</a></li>
+        {% if cat.children %}
+          <ul class="cat-list-children">
+            {% for child in cat.children %}
+              <li><a href="{{child.link}}">{{child.name}}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Displaying Posts https://github.com/timber/timber/wiki/TimberPost -->
+  <div class="uk-container uk-margin-large">
+    <h2>Displaying Posts</h2>
+    <div class="uk-grid uk-child-width-1-3@m uk-grid-small">
+      {% for post in example_posts %}
+        <div>
+          <div class="uk-card">
+            <a href="{{ post.link }}" class="uk-card-image uk-cover-container">
+              <img src="{{TimberImage(post.example_post_image).src }}" alt="">
+            </a>
+            <div class="uk-card-media-content">
+              <div class="uk-card-body">
+                <h2 class="uk-card-title">{{ post.example_post_title }}</h2>
+                <div class="uk-card-text">{{ post.example_post_content }}</div>
+                <div class="ul-label-list">
+                  {% for category in post.terms('example_posts_category') %}
+                    <a href="{{ category.link }}" class="uk-label">{{ category.name }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Pagination https://github.com/timber/timber/wiki/Pagination -->
+  <div class="uk-container uk-margin-large">
+    <h2>Pagination</h2>
+    {% set vars = {
+      'pagination': example_posts_pagination
+    }%}
+    {% include 'components/pagination.twig' with vars %}
+  </div>
+
+
+  <!-- Breadcrumb component -->
+  <div class="uk-container uk-margin-large">
+    <h2>Breadcrumb</h2>
+    {{ breadcrumb }}
+  </div>
+
+  <!-- Iterator component -->
+  <div class="uk-container uk-margin-large">
+    <h2>Iterator component</h2>
+    {% set vars = {
+      'component': 'card-example',
+      'count': example_posts2,
+      'grid': 'uk-child-width-1-3@m uk-grid-small'
+    }%}
+    {% include 'partials/iterator.twig' with vars %}
+  </div>
+
+  <!-- Outer/Inner example -->
+  <div class="uk-container uk-margin-large">
+    <h2>Outer/Inner</h2>
+    <div class="uk-card uk-card-feedback">
+      <div class="uk-grid uk-grid-collapse">
+        <div class="uk-width-1-4 uk-card-media-left">
+          <div class="uk-card-image uk-cover-container uk-outer-left@l">
+            <img src=" http://placehold.it/568x360" alt="">
+          </div>
+        </div>
+        <div class="uk-width-3-4 uk-card-media-content">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Echt prettig feedback geven</h3>
+            <p class="uk-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut urna purus. Sed semper vestibulum ipsum. Nullam at eros velit. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-card uk-card-feedback">
+      <div class="uk-grid uk-grid-collapse">
+        <div class="uk-width-1-4 uk-flex-last@s uk-card-media-right">
+          <div class="uk-card-image uk-cover-container uk-outer-right@l">
+            <img src=" http://placehold.it/568x360" alt="">
+          </div>
+        </div>
+        <div class="uk-width-3-4 uk-card-media-content">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Echt prettig feedback geven</h3>
+            <p class="uk-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut urna purus. Sed semper vestibulum ipsum. Nullam at eros velit. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ dump()}}
+</main>
+
+{% include 'partials/footer.twig' %}

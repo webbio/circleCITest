@@ -1,0 +1,39 @@
+.hook-section-misc() {
+  .uk-section-ubr{
+    position: relative;
+    padding: 120px 0 180px;
+    @media (max-width: 960px) {
+      padding: 90px 0;
+    }
+    .uk-section-title {
+      position: relative;
+      margin: 35px 0 170px !important;
+      @media (max-width: @breakpoint-medium) {
+        margin: 0 0 100px !important;
+      }
+      h2 {
+        position: relative;
+        z-index: 1;
+        line-height: 1.6;
+        @media (max-width: @breakpoint-medium) {
+          font-size: 18px;
+        }
+      }
+      .uk-section-number {
+        font-weight: bold;
+        line-height: 1.0;
+        color: #f9f9f9;
+        text-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        font-size: 250px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -35%);
+        @media (max-width: @breakpoint-medium) {
+          font-size: 200px;
+        }
+      }
+    }
+
+  }
+}

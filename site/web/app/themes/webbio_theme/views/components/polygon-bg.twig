@@ -1,0 +1,14 @@
+<div class="uk-section-background">
+  {% if not images %}
+  <svg class="clip-diagonal-bottom-{{ class_color_svg }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon class="clip-diagonal-bottom-{{ class_color_polygon }} uk-visible@m" points="0 90 100 100 0 100" />
+    <polygon class="clip-diagonal-bottom-{{ class_color_polygon }} uk-hidden@m" points="0 95 100 100 0 100" />
+  </svg>
+  {% else %}
+   <div class="uk-clip-polygon lazy" style="background-image: url('{{ post.get_field('header2_achtergrond_afbeelding') }}')">
+  </div>
+    <span class="uk-polygon-border" style="
+      border-bottom: 77px solid {{ color_polygon }};
+    "></span>
+  {% endif %}
+</div>

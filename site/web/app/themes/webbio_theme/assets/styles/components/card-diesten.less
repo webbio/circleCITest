@@ -1,0 +1,68 @@
+.hook-card-misc() {
+  .uk-card-diensten {
+    >div {
+      @media (max-width: @breakpoint-medium) {
+        margin: 0 0 40px;
+      }
+      &:before {
+        content: '';
+        height: 2px;
+        width: 32px;
+        background: #1fcfc1;
+        display: block;
+        margin:0 0 20px;
+      }
+    }
+    .uk-card-media-top {
+      text-align: center;
+      margin: 80px 0 50px;
+      @media (max-width: @breakpoint-medium) {
+        width: 80px;
+        flex:0 0 auto;
+      }
+      .uk-card-content {
+        color: #52575e;
+      }
+      @media (max-width: @breakpoint-medium) {
+        margin: 0;
+        img {
+          width: 70px;
+          height:auto;
+        }
+      }
+      img {
+        width: auto;
+        height: 105px;
+        @media (max-width: @breakpoint-medium) {
+          height: 80px;
+        }
+      }
+    }
+    .uk-card-content-top {
+      @media (max-width: @breakpoint-medium) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .uk-card-title {
+        @media (max-width: @breakpoint-small) {
+          margin: 0 0 8px;
+        }
+      }
+    }
+    .uk-card-content-bottom {
+      padding: 0 15px;
+
+      li {
+        margin:0 0 15px;
+        @media (max-width: @breakpoint-small) {
+          margin:0 0 5px;
+        }
+        &:nth-child(n+2) {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+}

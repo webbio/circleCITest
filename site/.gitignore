@@ -1,0 +1,42 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/uploads/
+web/app/upgrade
+.idea/
+.DS_Store
+yarn.lock
+**/.DS_Store
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+vendor/*
+!vendor/.gitkeep
+composer.lock
+*/composer.lock
+
+# Webbio development - MU Plug-ins - Managed via GIT not composer
+!web/app/mu-plugins/custom-post-types.php
+!web/app/mu-plugins/taxonomies.php
+!web/app/mu-plugins/menus.php
+!web/app/mu-plugins/metaboxes.php
+!web/app/mu-plugins/transformer.php
+!web/app/mu-plugins/helpers.php
+!web/app/mu-plugins/metaboxes
+!web/app/mu-plugins/acf
+!web/app/mu-plugins/acf.php
+
+## Webbio development - Plug-ins - Managed via GIT not composer
+# Meta-box plug-ins
+!web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/gravityforms
+!web/app/plugins/post-duplicator

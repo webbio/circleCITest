@@ -1,0 +1,33 @@
+.hook-section-misc() {
+  .uk-section-contact-page {
+    h2 {
+      font-size: 28px;
+      @media (max-width: @breakpoint-medium) {
+        font-size: 24px;
+      }
+    }
+    .uk-card-body {
+      @media (max-width: @breakpoint-medium) {
+        padding: 0;
+      }
+    }
+    .uk-card-block {
+      margin-bottom: 40px;
+    }
+    .uk-card-description {
+      font-weight: 300;
+      color: #52575e;
+      @media (max-width: @breakpoint-medium) {
+        font-size: 15px;
+      }
+      strong {
+        font-weight: 400;
+      }
+    }
+    @media (max-width: @breakpoint-small) {
+      .uk-card-action {
+        text-align: center;
+      }
+    }
+  }
+}

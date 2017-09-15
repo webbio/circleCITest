@@ -1,0 +1,29 @@
+{% set contact = post.get_field('contact_fields_group') %}
+<div class="uk-section uk-section-contact">
+  <div class="uk-section-background">
+    <img src="{{ theme.link }}/assets/images/pattern.svg" alt="">
+  </div>
+  <div class="uk-section-foreground">
+    <div class="uk-section-body">
+      <div class="uk-container uk-container-small">
+        <div class="uk-container uk-container-small">
+          <div class="uk-section-description" uk-grid>
+            <div class="uk-width-2-5">
+              <h2 class="uk-h1">{{ contact.shordcode|shortcodes}}</h2>
+            </div>
+            <div class="uk-width-3-5">
+              <div class="uk-contact-info">
+                <span>{{ contact.phone }}</span>
+                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+              </div>
+              <div class="uk-contact-adress">
+                <div>{{ contact.address_1 }}</div>
+                <div>{{ contact.address_2 }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

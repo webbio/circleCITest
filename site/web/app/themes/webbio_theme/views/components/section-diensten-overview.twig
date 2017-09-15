@@ -1,0 +1,26 @@
+<div class="uk-section uk-section-diensten-overview">
+  {% set vars = {
+  'class_color_polygon': 'white',
+  'class_color_svg': 'gray'
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+  <div class="uk-section-foreground">
+    <div class="uk-section-header uk-h2 uk-margin-large-bottom">
+      <div class="uk-container">
+        <div class="uk-section-subtitle">
+          {{ post.get_field('diensten_titel') }}
+        </div>
+      </div>
+    </div>
+    <div class="uk-section-body">
+      <div class="uk-container">
+          {% set vars = {
+          'component': 'card-diensten',
+          'count': diensten_item,
+          'grid': 'uk-child-width-1-3@m uk-child-width-1-1@s uk-card-diensten'
+          } %}
+          {% include 'partials/iterator.twig' with vars %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{% include 'partials/header.twig' %}
+
+<main class="uk-main">
+
+  {% set vars = {
+  'color_brd': '#fff'
+  } %}
+  {% include 'components/section-secondary.twig' with vars %}
+
+  {% include 'components/section-contact-page.twig'%}
+
+</main>
+
+{% include 'partials/footer-whitepaper.twig' %}

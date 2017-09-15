@@ -1,0 +1,49 @@
+<div class="uk-section uk-section-portfolio-overview">
+  {% set vars = {
+  'class_color_polygon': 'white',
+  'class_color_svg': 'gray',
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+  <div class="uk-section-foreground">
+    <div class="uk-container">
+      <div uk-grid>
+        <div class="uk-width-2-5@m">
+          <div>
+            <div class="uk-section-header uk-h2">
+              <div class="uk-section-subtitle">
+                {{ post.get_field('business_cases_titel') }}
+              </div>
+              <div class="uk-section-title">
+                {{ post.get_field('business_cases_cta_tekst') }}
+              </div>
+            </div>
+            <a href="{{ post.get_field('business_cases_cta_url') }}" target="{{ post.get_field('business_cases_cta_target') }}" class="uk-button uk-button-default uk-visible@m">
+              {{ post.get_field('business_cases_cta_button_text') }}
+            </a>
+          </div>
+        </div>
+        <div class="uk-width-3-5@m">
+          <div class="uk-section-body">
+            {% set vars = {
+            'component': 'card-portfolio',
+            'column': ' uk-card-portfolio',
+            'count': post.get_field('selectie_business_cases'),
+            'grid': 'uk-grid-medium uk-child-width-1-2@s',
+            'shadow': 'uk-box-shadow',
+            'hover_cart': 'uk-hover-static',
+
+            } %}
+            {% include 'partials/iterator.twig' with vars %}
+          </div>
+        </div>
+      </div>
+      <div class="uk-section-footer uk-text-center uk-hidden@m">
+        <div class="uk-container">
+          <a href="{{ post.get_field('business_cases_cta_url') }}" target="{{ post.get_field('business_cases_cta_target') }}" class="uk-button uk-button-default">
+            {{ post.get_field('business_cases_cta_button_text') }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

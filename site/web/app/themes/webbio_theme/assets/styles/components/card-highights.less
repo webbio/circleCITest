@@ -1,0 +1,43 @@
+.hook-card-misc() {
+  .card-highights {
+    @media (max-width: @breakpoint-medium) {
+      flex-direction: column-reverse;
+    }
+    .uk-card-boxshadow {
+      box-shadow: 0 12px 24px 0 rgba(0, 0, 0, .08);
+    }
+    .uk-card-body {
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      box-sizing: border-box;
+      @media (max-width: @breakpoint-medium) {
+        position: static;
+        transform: none;
+        flex-direction: column;
+      }
+      &.uk-card-left {
+        > div {
+          display: flex;
+          justify-content: flex-end;
+          @media (max-width: @breakpoint-medium) {
+            justify-content: flex-start;
+          }
+        }
+      }
+      .uk-card-body-wrap {
+        width: 45%;
+        @media (max-width: @breakpoint-medium) {
+          width: 100%;
+        }
+      }
+    }
+    &:not(:last-child) {
+      padding-bottom:200px;
+      @media (max-width: @breakpoint-medium) {
+        padding-bottom: 50px;
+      }
+    }
+  }
+}

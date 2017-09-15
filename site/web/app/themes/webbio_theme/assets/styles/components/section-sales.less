@@ -1,0 +1,79 @@
+.hook-section-misc() {
+  .uk-section-sales {
+    position: relative;
+    padding: 100px 0 200px !important;
+    &.uk-last-section {
+      padding: 100px 0 150px !important;
+    }
+    .uk-section-background {
+      border-radius: 0 100px 0 0;
+      background-image: linear-gradient(to top, #ffffff, #fbfbfb);
+    }
+    .uk-section-foreground {
+      padding-top: 30px;
+    }
+    .uk-section-counter {
+      font-size: 150px;
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: 0.3px;
+      color: @gray;
+      position: absolute;
+      top: 0;
+      transform: translateY(-100%);
+    }
+    .uk-section-icon {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -120%) rotate(45deg);
+      width: 134px;
+      height: 134px;
+      border-radius: 47px;
+      background-color: #ffffff;
+      box-shadow: 7px 9px 13px 0 rgba(36, 22, 51, 0.08);
+      border-style: solid;
+      border-width: 5px;
+      border-color: #f8f8f8;
+      border-image-slice: 1;
+      display: flex;
+      justify-content: center;
+      img {
+        transform: rotate(-45deg);
+      }
+    }
+    .uk-section-description {
+      margin:0 0 100px !important;
+      .uk-card {
+        display: flex;
+        flex-direction: row;
+        h3 {
+          margin:0 30px 0 0;
+        }
+      }
+    }
+    .uk-section-actions {
+      text-align: center;
+    }
+  }
+  .uk-outer-x {
+    margin-left: calc((100vw - 67%) / 2 * -1);
+  }
+  &.uk-section-sales-feedback {
+    .uk-card {
+      p {
+        font-size: 18px;
+        color: @storm-dust;
+      }
+      .uk-card-title {
+        font-size: 21px;
+        color: #5185f7;
+        margin: 0 0 5px;
+      }
+      .uk-card-desc {
+        color: #333e50;
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+
+{% for buisness_case in posts %}
+
+  {% set sales_group = buisness_case.get_field('group_sales') %}
+  <div class="uk-section uk-section-sales uk-section-sales-feedback uk-padding {% if loop|last %}uk-last-section{% endif %}">
+    <div class="uk-section-background"></div>
+    <div class="uk-section-foreground">
+      <div class="uk-section-header">
+        <div class="uk-container uk-container-expand">
+          <div class="uk-section-counter">
+            {% if loop.index  < 9 %}
+              0{{ loop.index }}.
+            {% else %}
+              {{ loop.index }}.
+            {% endif %}
+          </div>
+        </div>
+        <div class="uk-container uk-container-small">
+          <div class="uk-section-icon">
+            <img src="{{ sales_group.logo }}" alt="logo">
+          </div>
+          <h2 class="uk-section-title uk-text-center uk-margin-remove-top uk-margin-large-bottom">{{ buisness_case.title }}</h2>
+          <div class="uk-section-description">
+            <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+              {% for item in sales_group.box_questions %}
+                <div>
+                  <div class="uk-card">
+                    <h3>{{ item.question }}</h3>
+                    <div>{{ item.description }}</div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+      </div>
+      <div class="uk-section-body">
+          {% if buisness_case.show_feedback %}
+            <div class="uk-container">
+                {% set vars = {
+                'component': 'card-feedback-team',
+                'count': buisness_case.get_field('feedback_company_block'),
+                'grid': 'uk-grid-medium uk-child-width-1-4@m uk-child-width-1-3@s uk-grid-match uk-card-specialist-list'
+                } %}
+                {% include 'partials/iterator.twig' with vars %}
+            </div>
+          {% elseif  buisness_case.show_slot_block %}
+            <div class="uk-container">
+              <div class="uk-outer-x uk-outer-right-lg-0">
+                {% include 'components/card-slot.twig'%}
+              </div>
+            </div>
+          {% elseif  buisness_case.show_vanriet_block %}
+            <div class="length-answer uk-hidden">{{buisness_case.get_field('vanriet_block')|length}}</div>
+          <div data-id='{{ buisness_case.id }}' class="uk-section uk-section-dialog uk-background-muted">
+            <div class="uk-section-body">
+              <div class="uk-container">
+                <div class="uk-section-header">
+                  <span class="uk-h1">{{buisness_case.vanriet_block_title}}</span>
+                </div>
+                <div class="uk-section-content">
+                  {% set vars = {
+                  'component': 'card-vanriet',
+                  'count': buisness_case.get_field('vanriet_block', buisness_case.id)|slice(0,1)
+                  } %}
+                {% include 'partials/iterator.twig' with vars %}
+                </div>
+                <div class="uk-block-load-more">
+                  <button class="load-more">
+                    <svg class="progress" width="50" height="50" viewBox="0 0 50 50">
+                      <circle class="progress_item" cx="25" cy="25" r="21" stroke-width="2" stroke-dasharray="131.88" stroke-dashoffset="131.88"/>
+                    </svg>
+                    <span class="icon-reload"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      <div class="uk-section-footer">
+        <div class="uk-container">
+          <div class="uk-section-actions">
+            <button class="uk-button uk-button-default">
+              Bekijk op klantwebsite
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endfor %}

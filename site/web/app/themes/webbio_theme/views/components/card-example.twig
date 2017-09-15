@@ -1,0 +1,25 @@
+{#{% set vars = {#}
+  {#'offset': '',#}
+  {#'modify': '',#}
+  {#'media': '',#}
+  {#'content': '',#}
+{#} %}#}
+
+<div class="uk-card uk-card-example {{ offset|default('') }} {{ modify|default('') }}">
+  <div class="{{ media|default('uk-card-media-top') }}">
+    <a href="{{ item.link }}" class="uk-card-image uk-cover-container">
+      <img src="{{TimberImage(item.example_post_image).src }}" alt="">
+    </a>
+  </div>
+  <div class="uk-card-media-body {{ content|default('') }}">
+    <div class="uk-card-body">
+      <h2 class="uk-card-title">{{ item.example_post_title }}</h2>
+      <div class="uk-card-content">{{ item.example_post_content }}</div>
+      <div class="ul-label-list">
+        {% for category in item.terms('example_posts_category') %}
+          <a href="{{ category.link }}" class="uk-label">{{ category.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="uk-section uk-section-sales-main">
+  <div class="uk-section-background">
+    <img src="{{ theme.link }}/assets/images/pattern.svg" alt="">
+  </div>
+  <div class="uk-section-foreground">
+    <div class="uk-section-header">
+      <div class="uk-container uk-container-small">
+        <h1 class="uk-visible@m">{{ post.get_field('title') }}</h1>
+        <h4 class="uk-margin-remove-top uk-visible@m">{{ post.get_field('sub_title') }}</h4>
+        <div class="uk-responsive uk-hidden@m"">
+          <div class="uk-responsive-header">
+            <h1>Responsive? Onze websites zijn meer dan dat!</h1>
+            <h4>Zo is deze pagina niet overtuigend op een klein scherm, bekijk ‘m daarom op een groter scherm!</h4>
+          </div>
+          <img src="{{ theme.link }}/assets/images/ufo.svg" alt="">
+        </div>
+      </div>
+    </div>
+      <div class="uk-section-body">
+        <div class="uk-container uk-container-small">
+          <div class="uk-section-description uk-visible@m">
+            {% if post.get_field('description') %}
+              {{ post.get_field('description') }}
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="uk-section uk-section-portfolio-overview">
+  <div class="uk-section-body">
+    <div class="uk-container">
+      {% set vars = {
+      'component': 'card-portfolio',
+      'column': ' uk-card-portfolio',
+      'count': posts,
+      'grid': 'uk-grid-large uk-child-width-1-2@s',
+      'hover_cart': 'uk-hover-static',
+        'hover': true
+      } %}
+      {% include 'partials/iterator.twig' with vars %}
+    </div>
+  </div>
+</div>

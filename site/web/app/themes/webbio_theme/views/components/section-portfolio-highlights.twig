@@ -1,0 +1,10 @@
+<div class="uk-section uk-section-portfolio-highights">
+  <div class="uk-section-body">
+    {% set vars = {
+    'component': 'card-highights',
+    'column': ' uk-card-portfolio',
+    'count': post.get_field('portfolio_highlights_highlight_repeater'),
+    } %}
+    {% include 'partials/iterator.twig' with vars %}
+  </div>
+</div>

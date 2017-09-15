@@ -1,0 +1,187 @@
+// Variables
+// ========================================================================
+
+@section-padding-vertical:                        @global-medium-margin;
+@section-padding-vertical-m:                      @global-large-margin;
+
+@section-xsmall-padding-vertical:                 @global-margin;
+
+@section-small-padding-vertical:                  @global-medium-margin;
+
+@section-large-padding-vertical:                  @global-large-margin;
+@section-large-padding-vertical-m:                @global-xlarge-margin;
+
+@section-xlarge-padding-vertical:                 @global-xlarge-margin;
+@section-xlarge-padding-vertical-m:               (@global-large-margin + @global-xlarge-margin);
+
+@section-default-background:                      @global-background;
+
+@section-muted-background:                        @global-muted-background;
+
+@section-primary-background:                      @global-primary-background;
+@section-primary-color-mode:                      light;
+
+@section-secondary-background:                    @global-snowwhite;
+@section-secondary-color-mode:                    light;
+
+.hook-section-misc() {
+  .uk-section {
+    position: relative;
+    //padding: 150px 0;
+    @media (max-width: @breakpoint-medium) {
+      padding: 50px 0;
+    }
+    &-foreground {
+      position: relative;
+    }
+    &-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .uk-section-header {
+      color: @global-blackcurrant;
+      font-size: 35px;
+      &.uk-h2 {
+        font-size: 45px;
+        @media (max-width: @breakpoint-large) {
+          font-size: 35px;
+        }
+        @media (max-width: @breakpoint-small) {
+          font-size: 24px;
+        }
+      }
+      @media (max-width: @breakpoint-medium) {
+        font-size: @global-xlarge-font-size;
+      }
+      @media (max-width: @breakpoint-small) {
+        font-size: @global-large-font-size;
+      }
+      .uk-section-subtitle {
+        font-weight: 100;
+        strong {
+          font-weight: 300;
+        }
+      }
+      .uk-section-title {
+        font-weight: 300;
+        line-height: 1.2;
+        margin: 0 0 20px;
+      }
+    }
+  }
+  .uk-section-image {
+    margin:80px 0;
+    @media (max-width: @breakpoint-small) {
+      margin:40px 0;
+    }
+  }
+  .uk-clip-polygon {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 90%);
+    /* Note that percentages work as well as px */
+    background-size:cover;
+    background-position: 50% 50% ;
+    &:before {
+      content: '';
+      background-image: radial-gradient(circle at 100% 72%, rgba(40, 27, 62, 0.0), rgba(40, 27, 62, 0.66) 49%, #281b3e);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    @media (max-width: @breakpoint-medium) {
+      clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 94%);
+    }
+  }
+  .uk-section-diensten-overview {
+    padding:70px 0 100px;
+    @media (max-width: @breakpoint-medium) {
+      padding:70px 0;
+    }
+    .uk-section-foreground {
+      padding-bottom: 100px;
+      @media (max-width: @breakpoint-medium) {
+        padding-bottom: 0;
+      }
+    }
+    .uk-card-content {
+      min-height: 75px;
+    }
+  }
+  .uk-section-method {
+      padding: 100px 0 150px;
+      @media (max-width: @breakpoint-medium) {
+        padding:50px 0;
+      }
+  }
+  .uk-section-portfolio-start {
+    line-height: 1.8;
+    padding: 115px 0 150px;
+    @media (max-width: @breakpoint-medium) {
+      padding: 70px 0 50px;
+    }
+  }
+  .uk-section-portfolio-cta {
+    padding-bottom: 120px;
+    @media (max-width: @breakpoint-medium) {
+      padding-bottom: 50px;
+    }
+  }
+  @media (max-width: @breakpoint-small) {
+    .uk-section-portfolio-website {
+      .uk-first-column {
+        >.uk-sticky-fixed {
+          position: static !important;
+          & + .uk-sticky-placeholder {
+            height: auto !important;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: @breakpoint-small) {
+    .uk-section-portfolio-website {
+      .uk-section-footer {
+        position: static !important;
+      }
+    }
+  }
+  @media (max-width: @breakpoint-medium) {
+    .uk-section-single {
+      padding: 90px 0;
+    }
+  }
+
+  .uk-section-portfolio-website {
+    .uk-first-column {
+      margin-bottom:70px;
+      @media (max-width: @breakpoint-small) {
+        margin-bottom:0;
+      }
+    }
+    .uk-mobile-screen {
+      max-width:320px;
+      margin: 0 auto;
+      display: block;
+    }
+    .uk-sticky-fixed {
+      z-index: 900;
+    }
+  }
+  .uk-section-portfolio-highights {
+    padding:200px 0;
+    @media (max-width: @breakpoint-medium) {
+      padding: 50px 0;
+    }
+  }
+
+}

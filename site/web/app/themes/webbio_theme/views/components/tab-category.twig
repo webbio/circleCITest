@@ -1,0 +1,6 @@
+<ul class="uk-tab uk-tab-categories">
+  <li><a href="#">All</a></li>
+  {% for cat in categories %}
+    <li class="uk-active"><a href="{{ cat.link }}">{{ cat.name }}</a></li>
+  {% endfor %}
+</ul>

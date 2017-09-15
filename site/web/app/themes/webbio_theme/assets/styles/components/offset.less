@@ -1,0 +1,38 @@
+.hook-grid-misc() {
+  .uk-outer-left {
+    margin-left: calc(~'(100vw - 100%) / -2') !important;
+  }
+  .uk-outer-right {
+    margin-right: calc(~'(100vw - 100%) / -2') !important;
+  }
+  .uk-inner-left {
+    padding-left: calc(~'(100vw - 100%) / 2') !important;
+  }
+  .uk-inner-right {
+    padding-right: calc(~'(100vw - 100%) / 2') !important;
+  }
+  @media (min-width: @breakpoint-small) {
+    .mixin-reordering(s, outer-left, margin-left, '-', 100%);
+    .mixin-reordering(s, outer-right, margin-right, '-', 100%);
+    .mixin-reordering(s, inner-left, padding-left, '', 100%);
+    .mixin-reordering(s, inner-right, padding-right, '', 100%);
+  }
+  @media (min-width: @breakpoint-medium) {
+    .mixin-reordering(m, outer-left, margin-left, '-', @container-small-max-width);
+    .mixin-reordering(m, outer-right, margin-right, '-', @container-small-max-width);
+    .mixin-reordering(m, inner-left, padding-left, '', @container-small-max-width);
+    .mixin-reordering(m, inner-right, padding-right, '', @container-small-max-width);
+  }
+  @media (min-width: @breakpoint-large) {
+    .mixin-reordering(l, outer-left, margin-left, '-', @container-max-width);
+    .mixin-reordering(l, outer-right, margin-right, '-', @container-max-width);
+    .mixin-reordering(l, inner-left, padding-left, '', @container-max-width);
+    .mixin-reordering(l, inner-right, padding-right, '', @container-max-width);
+  }
+  @media (min-width: @breakpoint-xlarge) {
+    .mixin-reordering(xl, outer-left, margin-left, '-', @container-large-max-width);
+    .mixin-reordering(xl, outer-right, margin-right, '-', @container-large-max-width);
+    .mixin-reordering(xl, inner-left, padding-left, '', @container-large-max-width);
+    .mixin-reordering(xl, inner-right, padding-right, '', @container-large-max-width);
+  }
+}

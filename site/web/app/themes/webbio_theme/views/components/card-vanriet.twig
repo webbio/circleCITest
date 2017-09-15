@@ -1,0 +1,67 @@
+{% if item %}
+<div class="uk-grid uk-dialog uk-grid-stack uk-dialog-inner">
+  <div class="uk-dialog-item">
+    <div class="uk-dialog-card">
+      <div class="uk-card-dialog-media">
+        <img src="{{item.question_image}}" alt="{{item.author_question}}">
+      </div>
+      <div class="uk-card-dialog-body">
+        <div class="uk-card-dialog-header">
+          <p>{{item.author_question}}</p>
+        </div>
+        <div class="uk-card-dialog-content">
+          <p>{{item.question_text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="uk-dialog-item uk-dialog-item-inverse">
+    <div class="uk-dialog-card">
+      <div class="uk-card-dialog-media">
+        <img src="{{item.answer_image}}" alt="{{item.answer_image}}">
+      </div>
+      <div class="uk-card-dialog-body">
+        <div class="uk-card-dialog-header">
+          <p>{{ item.author_answer }}</p>
+        </div>
+        <div class="uk-card-dialog-content">
+          <p>{{item.answer_text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+  <div class="uk-grid uk-dialog uk-grid-stack uk-dialog-inner">
+    <div class="uk-dialog-item">
+      <div class="uk-dialog-card">
+        <div class="uk-card-dialog-media">
+          <img src="{{question_image}}" alt="{{author_question}}">
+        </div>
+        <div class="uk-card-dialog-body">
+          <div class="uk-card-dialog-header">
+            <p>{{author_question}}</p>
+          </div>
+          <div class="uk-card-dialog-content">
+            <p>{{question_text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-dialog-item uk-dialog-item-inverse">
+      <div class="uk-dialog-card">
+        <div class="uk-card-dialog-media">
+          <img src="{{answer_image}}" alt="{{answer_image}}">
+        </div>
+        <div class="uk-card-dialog-body">
+          <div class="uk-card-dialog-header">
+            <p>{{ author_answer }}</p>
+          </div>
+          <div class="uk-card-dialog-content">
+            <p>{{answer_text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

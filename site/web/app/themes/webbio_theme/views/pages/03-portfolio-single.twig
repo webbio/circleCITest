@@ -1,0 +1,27 @@
+{% include 'partials/header-secondary.twig' %}
+
+<main class="uk-main">
+
+  {% include 'components/section-secondary-single.twig' %}
+
+  {% include 'components/section-portfolio-start.twig' %}
+
+  {% include 'components/section-portfolio-website.twig' %}
+
+  {% include 'components/section-portfolio-highlights.twig' %}
+
+  {% include 'components/section-portfolio-brandassets.twig' %}
+
+  {% set vars = {
+    'icon': false,
+  } %}
+  {% include 'components/section-portfolio-cta.twig' with vars%}
+
+  {% include 'components/section-testimonials.twig' %}
+
+  {% include 'components/section-webbio.twig' %}
+
+
+</main>
+
+{% include 'partials/footer-whitepaper.twig' %}

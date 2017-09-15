@@ -1,0 +1,38 @@
+
+<header class="uk-header" uk-sticky>
+
+  <div class="uk-container uk-container-expand">
+
+    <nav class="uk-navbar-container uk-navbar-transparent uk-navbar-mobile uk-visible@m" uk-navbar>
+      <div class="uk-navbar-left">
+        {% include 'components/logo.twig' %}
+      </div>
+      <div class="uk-navbar-right">
+        {% include 'components/nav-navbar.twig' %}
+
+        <!-- <div class="uk-navbar-item">
+          <button class="uk-button uk-button-primary">Button</button>
+          <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas" href="#">
+            <span class="uk-margin-small-right">Menu</span> <span uk-navbar-toggle-icon></span>
+          </a>
+        </div> -->
+
+      </div>
+    </nav>
+
+    <nav class="uk-navbar-container uk-navbar-transparent uk-navbar-desktop uk-hidden@m" uk-navbar>
+      <div class="uk-navbar-left">
+        {% include 'components/logo.twig' %}
+      </div>
+      <div class="uk-navbar-right">
+        <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas" href="#">
+          <span uk-navbar-toggle-icon></span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+{% include 'partials/offcanvas.twig' %}

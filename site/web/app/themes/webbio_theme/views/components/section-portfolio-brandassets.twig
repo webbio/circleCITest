@@ -1,0 +1,23 @@
+<div class="uk-section uk-section-portfolio-brandassets uk-padding-remove-top">
+  <div class="uk-container">
+    <div class="uk-section-header uk-text-center">
+      <div class="uk-section-title">{{ post.get_field('portfolio_brand_assets_titel') }}</div>
+    </div>
+    <div class="uk-section-description uk-text-center">
+      <div class="uk-container-small uk-margin-auto">
+        {{ post.get_field('portfolio_brand_assets_tekst') }}
+      </div>
+    </div>
+    <div class="uk-section-body uk-text-center">
+      {% for item in post.get_field('portfolio_brand_assets_kleuren') %}
+        <div class="uk-item-color">
+          <div style="background-color: {{ item.portfolio_brand_assets_kleuren_hex_code_kleur }}"></div>
+          <span>{{ item.portfolio_brand_assets_kleuren_naam_kleur }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="uk-section-image uk-margin-remove-top">
+      <img class="lazy" data-src="{{ post.get_field('portfolio_brand_assets_afbeelding') }}" alt="">
+    </div>
+  </div>
+</div>

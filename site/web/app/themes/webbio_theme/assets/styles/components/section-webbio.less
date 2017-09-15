@@ -1,0 +1,40 @@
+.hook-section-misc() {
+  .uk-section-webbio {
+    padding:150px 0;
+    @media (max-width: @breakpoint-medium) {
+      padding:50px 0;
+    }
+    p {
+      font-family: Overpass,sans-serif !important;
+      @media (max-width: @breakpoint-small) {
+        font-size: 16px;
+      }
+    }
+
+    .uk-section-image {
+      margin:70px 0 0 -30px;
+    }
+    .uk-section-action {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      > div {
+        display: inline-flex;
+        flex-direction:column;
+        .uk-button, > span {
+          margin:0 0 15px;
+        }
+      }
+
+    }
+    .uk-section-right {
+      padding-left:100px;
+      @media (max-width: @breakpoint-large) {
+        padding-left:60px;
+      }
+      @media (max-width: @breakpoint-medium) {
+        padding-left:40px;
+      }
+    }
+  }
+}

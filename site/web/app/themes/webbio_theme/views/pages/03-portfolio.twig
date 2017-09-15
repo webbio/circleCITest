@@ -1,0 +1,26 @@
+{% include 'partials/header.twig' %}
+
+<main class="uk-main">
+
+
+  {% set vars = {
+  'color_brd': '#fff'
+  } %}
+  {% include 'components/section-secondary.twig' with vars %}
+
+  {% include 'components/section-portfolio-page.twig'%}
+
+  {% set vars = {
+    'icon': true,
+    'intercom': 'uk-intercom'
+  } %}
+  {% include 'components/section-portfolio-cta.twig' with vars%}
+
+  {% include 'components/section-ubr.twig'%}
+
+  {% include 'components/section-webbio.twig'%}
+
+
+</main>
+
+{% include 'partials/footer-whitepaper.twig' %}

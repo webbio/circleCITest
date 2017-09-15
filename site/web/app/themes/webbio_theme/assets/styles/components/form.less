@@ -1,0 +1,165 @@
+@form-height:                                   40px;
+@form-line-height:                              @form-height;
+@form-padding-horizontal:                       0;
+@form-padding-vertical:                         8px;
+
+@form-background:                               transparent;
+@form-color:                                    rgba(0, 0, 0, 0.87);
+
+@form-focus-background:                         transparent;
+@form-focus-color:                              @global-color;
+@form-focus-border:                             @global-primary-background;
+
+@form-disabled-background:                      @global-muted-background;
+@form-disabled-color:                           @global-muted-color;
+
+@form-placeholder-color:                        transparent;
+
+@form-radio-size:                               18px;
+@form-radio-margin-top:                         -4px;
+@form-radio-background:                         transparent;
+
+@form-radio-checked-background:                 @global-primary-background;
+@form-radio-checked-icon-color:                 @global-inverse-color;
+
+@form-radio-checked-focus-background:           darken(@global-primary-background, 10%);
+
+@form-radio-disabled-background:                @global-muted-background;
+@form-radio-disabled-icon-color:                @global-muted-color;
+
+@form-legend-font-size:                         @global-large-font-size;
+@form-legend-line-height:                       1.4;
+
+@internal-form-select-image: "../images/backgrounds/form-select.svg";
+@internal-form-radio-image: "../images/backgrounds/form-radio.svg";
+@internal-form-checkbox-image: "../images/backgrounds/form-checkbox.svg";
+@internal-form-checkbox-indeterminate-image: "../images/backgrounds/form-checkbox-indeterminate.svg";
+
+.hook-form() {
+  display: block;
+  width: 100%;
+  border-bottom: @global-border-width solid rgba(0, 0, 0, 0.12);
+}
+
+.hook-form-focus() {
+  border-color: @form-focus-border;
+}
+
+.hook-form-label() {
+  box-sizing: border-box;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(0, 0);
+  transition: transform 0.25s, font-size 0.25s, opacity 0.35s;
+  padding: 0 @form-padding-horizontal;
+  margin: 0;
+  line-height: @form-line-height;
+  color: rgba(0, 0, 0, 0.38);
+  display: block;
+  font-size: 16px;
+  em {
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 14px;
+  }
+}
+
+.hook-form-danger() {
+  color: @form-color;
+  border-bottom-color: @global-danger-background;
+  &.uk-form-text {
+    color: @global-danger-background;
+  }
+}
+
+.hook-form-success() {
+  color: @form-color;
+  border-bottom-color: @global-success-background;
+  &.uk-form-text {
+    color: @global-success-background;
+  }
+}
+
+.hook-form-misc() {
+  .uk-form-list {
+    margin: 0 -10px;
+    > * {
+      margin: 0 10px;
+    }
+  }
+  .uk-form-text {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .uk-form-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .uk-required-label {
+    margin-bottom: 22px;
+    display: block;
+  }
+  .uk-textarea {
+    resize: none;
+  }
+  .uk-search-field,
+  .uk-form-group {
+    position: relative;
+    .uk-is-empty {
+      ~ .uk-form-label,
+      .uk-form-label {
+        opacity: 1;
+      }
+    }
+    .uk-input:focus,
+    .uk-select:focus,
+    .uk-textarea:focus,
+    .uk-is-focus,
+    .uk-is-not-empty,
+    &.uk-is-not-empty {
+      ~ .uk-form-label,
+      .uk-form-label {
+        opacity: 1;
+        transform: translate(0, -50%);
+        font-size: 12px;
+        color: #91a399;
+      }
+    }
+  }
+  .uk-form-group {
+    margin-bottom: 24px;
+    &-button {
+      text-align: right;
+      @media (max-width: @breakpoint-xsmall-max) {
+        text-align: center;
+      }
+    }
+  }
+  .uk-form-label-radio{
+    position: static;
+
+  }
+  .uk-form-group {
+    p{
+      margin: 0;
+    }
+  }
+  .uk-select:not([multiple]):not([size]) {
+    background-size: 13px auto !important;
+  }
+}
+
+.hook-form-radio() {
+  border-radius: 2px;
+  border: 2px solid rgba(28, 60, 100, 0.54);
+}
+.hook-form-radio-checked() {
+  border-color: @form-radio-checked-background;
+}
+.hook-form-radio-checked-focus() {
+  border-color: @form-radio-checked-focus-background;
+}
+

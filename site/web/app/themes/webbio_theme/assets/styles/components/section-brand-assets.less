@@ -1,0 +1,47 @@
+.hook-section-misc() {
+  .uk-section-portfolio-brandassets {
+    padding: 0 0 120px;
+    @media (max-width: @breakpoint-medium) {
+      padding: 0 0 70px;
+    }
+    .uk-section-body {
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (max-width: @breakpoint-medium) {
+        padding: 50px 0;
+      }
+      .uk-item-color {
+        width: 100px;
+        padding: 0 27px;
+        flex-wrap: wrap;
+        margin:0 0 20px;
+        @media (max-width: @breakpoint-small) {
+          padding: 0 15px;
+        }
+        div {
+          width: 100px;
+          height: 100px;
+          border-radius: 100px;
+          margin: 0 0 15px;
+          @media (max-width: @breakpoint-small) {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+          }
+        }
+        span {
+          font-size: @global-small-font-size;
+          color: @global-blackcurrant;
+          @media (max-width: @breakpoint-small) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .uk-section-image {
+      max-width:1320px;
+    }
+  }
+}

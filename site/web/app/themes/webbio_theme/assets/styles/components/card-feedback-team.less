@@ -1,0 +1,48 @@
+.hook-card-misc() {
+  &-team {
+    padding: 0 0 15px;
+    .uk-card-image {
+      display: block;
+      img {
+        width: 100%;
+        display: block;
+        height: auto;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+      }
+    }
+    .uk-card-body {
+      padding: 16px 0;
+    }
+    .uk-card-title {
+      margin: 0 0 8px 0;
+      color: @text-primary-color;
+    }
+    .uk-card-desc {
+      margin: 0;
+    }
+  }
+  .uk-card-team .uk-card-image[data-position] > *:not(.front) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+
+
+  [uk-direction="top"] .top,
+  [uk-direction="down"] .down,
+  [uk-direction="left"] .left,
+  [uk-direction="right"] .right,
+  [uk-direction="front"] .front,
+  [uk-direction="top-left"] .top-left,
+  [uk-direction="top-right"] .top-right,
+  [uk-direction="down-left"] .down-left,
+  [uk-direction="down-right"] .down-right {
+    opacity: 1 !important;
+  }
+}
+
+

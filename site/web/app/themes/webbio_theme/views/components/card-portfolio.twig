@@ -1,0 +1,32 @@
+
+  <div class="uk-card {{ shadow|default('') }}">
+    <div class="{{ media|default('uk-card-media-top') }}">
+      <a href="{{ item.link }}" class="uk-card-image" title="{{ item.title }}">
+        <div class="uk-cover-container">
+          <img class="uk-image-quote-static lazy" data-src="{{item.thumbnail }}" alt="{{ item.title }}" uk-cover>
+          <img class="uk-image-quote-hover lazy" data-src="{{TimberImage(item.portfolio_quote_achtergrond_hover).src }}" alt="{{ item.title }}" uk-cover>
+          <span class="uk-image-hover"></span>
+        </div>
+      </a>
+    </div>
+    <div class="uk-card-media-body {{ content|default('') }}">
+      <div class="uk-card-small uk-card-body {{ hover_cart|default('') }}">
+        <h2 class="uk-card-title"><a href="{{ item.link }}">{{ item.title }}</a></h2>
+        <div class="uk-card-content">
+          <span>{{ item.portfolio_overview_data_branche }}</span>
+          <span>{{ item.portfolio_overview_data_launch }}</span>
+        </div>
+      </div>
+
+      <div class="uk-card-small uk-card-body uk-quote-hover">
+        <a href="{{ item.link }}">
+        <h2 class="uk-card-title">{{ item.portfolio_overview_data_quote }}</h2>
+        <div class="uk-card-content">
+          <span>{{ item.portfolio_overview_data_naam }}</span>
+          <span>{{ item.portfolio_overview_data_functie }}</span>
+        </div>
+        </a>
+      </div>
+
+    </div>
+  </div>

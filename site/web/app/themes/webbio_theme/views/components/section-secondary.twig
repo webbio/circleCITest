@@ -1,0 +1,31 @@
+<div class="uk-section uk-section-main uk-section-secondary {{ class_bg }}">
+  {% set vars = {
+  'class_bg': 'uk-background-muted',
+  'images': true,
+  'color_polygon': color_brd
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+
+  <div class="uk-section-foreground">
+    <div class="uk-container">
+      <div uk-grid>
+        <div class="uk-width-3-5@m uk-width-5-5@s">
+          <div class="uk-section-header">
+            <div class="uk-section-title">
+              <h1 class="uk-h1">
+                <div>{{ post.get_field('header2_titel') }}</div>
+              </h1>
+            </div>
+          </div>
+          <div class="uk-section-body">
+            <div class="uk-section-description">
+              {% if post.get_field('header2_sub_titel') %}
+                {{ post.get_field('header2_sub_titel') }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

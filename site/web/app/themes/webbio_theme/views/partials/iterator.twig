@@ -1,0 +1,20 @@
+{#{% set vars = {#}
+  {#'component': '',#}
+  {#'count': '',#}
+  {#'grid': '',#}
+  {#'grid_attributes': '',#}
+  {#'column': ''#}
+{#} %}#}
+{#{% include 'partials/iterator.twig' with vars %}#}
+
+{% if grid and count %}<div class="uk-grid {{ grid|default('') }}" {{ grid_attributes|default('') }}>{% endif %}
+{% for item in count|default(0..0) %}
+  {% if grid %}<div class="{{ column|default('') }}">{% endif %}
+  {% include 'components/' ~ component ~ '.twig' %}
+  {% if grid %}</div>{% endif %}
+{% else %}
+  <div class="uk-alert-danger">
+    <p>No items found</p>
+  </div>
+{% endfor %}
+{% if grid and count %}</div>{% endif %}

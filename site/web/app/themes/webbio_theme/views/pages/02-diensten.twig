@@ -1,0 +1,20 @@
+{% include 'partials/header.twig' %}
+
+<main class="uk-main">
+  {% set vars = {
+    'class_bg': 'uk-background-muted',
+    'color_brd': '#f9f9f9'
+  } %}
+  {% include 'components/section-secondary.twig' with vars %}
+
+  {% include 'components/section-diensten-overview.twig'%}
+
+  {% include 'components/section-method.twig'%}
+
+  {% include 'components/section-portfolio-overview.twig'%}
+
+  {% include 'components/section-webbio.twig'%}
+
+</main>
+
+{% include 'partials/footer-whitepaper.twig' %}

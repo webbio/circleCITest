@@ -1,0 +1,27 @@
+<div class="uk-section uk-section-ubr">
+  {% set vars = {
+    'class_color_polygon': 'white',
+    'class_color_svg': 'gray',
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+  <div class="uk-section-foreground">
+    <div class="uk-section-header">
+      <div class="uk-container">
+        <div class="uk-section-title">
+          <h2 class="uk-text-center">{{ options.ubr_titel }}</h2>
+          <div class="uk-section-number">
+            {{ options.ubr_getal }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="uk-section-body">
+      <div class="uk-container">
+        <div class="uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
+          {% include 'components/card-ubr.twig'%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

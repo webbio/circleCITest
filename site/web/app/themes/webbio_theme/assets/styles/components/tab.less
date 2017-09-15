@@ -1,0 +1,70 @@
+// Name:            Tab
+// Description:     Component to create a tabbed navigation
+//
+// Component:       `uk-tab`
+//
+// Modifiers:       `uk-tab-bottom`
+//                  `uk-tab-left`
+//                  `uk-tab-right`
+//
+// States:          `uk-active`
+//                  `uk-disabled`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-margin-horizontal:                  20px;
+
+@tab-item-padding-horizontal:            10px;
+@tab-item-padding-vertical:              5px;
+@tab-item-color:                         @global-blackcurrant;
+@tab-item-hover-color:                   @global-brick-red;
+@tab-item-hover-text-decoration:         none;
+@tab-item-active-color:                  @global-brick-red;
+@tab-item-disabled-color:                @global-muted-color;
+
+
+
+
+// Hooks
+// ========================================================================
+
+.hook-tab-misc;
+
+.hook-tab() {}
+.hook-tab-item() {
+  font-size: @global-small-font-size;
+  color: @global-blackcurrant;
+  span {
+    font-size: 15px;
+    color: @global-blackcurrant;
+  }
+}
+.hook-tab-item-hover() {
+  span {
+    color: @global-brick-red;
+  }
+}
+.hook-tab-item-active() {
+  border-bottom:2px solid @global-brick-red;
+  span {
+    color: @global-brick-red;
+  }
+}
+.hook-tab-item-disabled() {}
+.hook-tab-bottom() {}
+.hook-tab-bottom-item() {}
+.hook-tab-left() {}
+.hook-tab-left-item() {}
+.hook-tab-right() {}
+.hook-tab-right-item() {}
+.hook-tab-misc() {
+  .uk-empty-tab {
+    font-size: @global-small-font-size;
+    color: @global-blackcurrant;
+    margin: 7px 0 0;
+  }
+}

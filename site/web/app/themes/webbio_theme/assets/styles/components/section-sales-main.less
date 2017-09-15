@@ -1,0 +1,36 @@
+.hook-section-misc() {
+  .uk-section-sales-main {
+    .uk-section-body {
+
+      .uk-section-description {
+        color:@global-brick-red;
+        max-width:460px;
+        position: relative;
+        margin:100px 0 100px auto;
+        &:before {
+          content: '“';
+          font-size: 150px;
+          line-height: 1;
+          font-weight: 700;
+          color: #e2e2e2;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform:translate(-50%, -50%);
+        }
+      }
+    }
+
+    .uk-responsive {
+      text-align: center;
+      margin: 60px 0 0;
+      .uk-responsive-header {
+        width: 65%;
+        text-align: left;
+      }
+      img {
+        margin: 80px 0 30px;
+      }
+    }
+  }
+}

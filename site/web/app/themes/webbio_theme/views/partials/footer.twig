@@ -1,0 +1,40 @@
+<div class="uk-footer">
+  <div class="uk-background-secondary">
+    <div class="uk-container uk-container-expand">
+      <div class="uk-footer-body">
+        <div class="uk-footer-wrap">
+          <div class="uk-footer-logo">
+            <a href="{{ function('home_url', '/') }}" class="uk-logo">
+              <img src="{{ options.footer_logo }}" uk-svg
+                   class="uk-logo-image {{ image|default('') }}">
+            </a>
+          </div>
+          <div class="uk-footer-info">
+
+            <div class="uk-footer-column">
+              <div>{{ options.footer_mailen_tekst }}</div>
+              <a href="mailto:{{ options.footer_e_mailadres }}">{{ options.footer_e_mailadres }}</a>
+            </div>
+            <div class="uk-footer-column">
+              <div>{{ options.footer_bellen_tekst }}</div>
+              <a href="tel:{{ options.footer_telefoonnummer_link }}">{{ options.footer_telefoonnummer }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="uk-footer-media">
+          <ul class="uk-footer-nav">
+            {% for item  in menu.footer_nav.get_items  %}
+              <li><a href="{{ item.get_link }}">{{item.title}}</a></li>
+            {% endfor %}
+          </ul>
+          <ul class="uk-footer-media-list">
+            {% for item  in options.footer_social  %}
+              <li><a href="{{ item.url }}"><span class="{{ item.icon }}"></span></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="uk-image-footer"><img src="{{ theme.link }}/assets/images/webbio-dark-dots.svg" uk-svg></div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.hook-card-misc() {
+  .uk-card-ubr {
+    display: flex;
+    flex-direction: column;
+    &:first-child h2 {
+      text-decoration: line-through;
+    }
+    @media (max-width: @breakpoint-medium) {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0 !important;
+    }
+    .uk-card-media-top {
+      text-align: center;
+      flex: 0 0 auto;
+      img {
+        width: auto;
+        height: 105px;
+        @media (max-width: @breakpoint-medium) {
+          width: 64px;
+          height: auto;
+        }
+      }
+
+    }
+    .uk-card-body {
+      padding: 15px;
+    }
+    &:first-child .uk-card-media-top {
+      img {
+        @media (max-width: @breakpoint-medium) {
+          height: 75px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,41 @@
+{% set main_section = post.get_field('header_uitdagingen') %}
+<div class="uk-section uk-section-main">
+  {% set vars = {
+  'class_color_polygon': 'grey',
+  'class_color_svg': 'dark',
+  'images': false
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+
+  <div class="uk-section-foreground">
+    <div class="uk-container">
+      <div uk-grid>
+        <div class="uk-width-3-5@m uk-width-5-5@s">
+          <div class="uk-section-header">
+            <img class="uk-ico-quote" src="{{ theme.link }}/assets/images/ico-quote.png" alt="">
+            <div class="uk-section-title">
+              <h1 class="uk-h1">
+                {% for item in  main_section %}
+                  <div class="uk-section-title">
+                    <div>{{ item.header_uitdagingen_tekst }}</div>
+                  </div>
+                {% endfor %}
+              </h1>
+            </div>
+          </div>
+          <div class="uk-section-body">
+            <div class="uk-section-description">
+              {% if post.get_field('header_homepage_sub_titel') %}
+                {{ post.get_field('header_homepage_sub_titel') }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="particles-js"></div>
+  <div class="count-particles">
+    <span class="js-count-particles">--</span> particles
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="uk-card uk-grid-collapse uk-child-width-1-2@m uk-margin card-highights" uk-grid>
+  <div class="{% if item.portfolio_highlights_afbeelding_uitlijning == 'left' %}uk-flex-first@m{% else %}uk-flex-last@m{% endif %} uk-card-media-right uk-cover-container
+    {% if item.portfolio_highlights_afbeelding_schaduw %}uk-card-boxshadow{% endif %}">
+    <img class="lazy" data-src="{{ item.portfolio_highlights_afbeelding }}" alt="">
+
+  </div>
+  <div>
+    <div class="uk-card-body {% if item.portfolio_highlights_afbeelding_uitlijning == 'left' %}uk-card-left{% endif %}">
+      <div class="uk-container">
+        <div class="uk-card-body-wrap">
+          <h3 class="uk-card-title uk-h3">{{ item.portfolio_highlights_titel }}</h3>
+          {{ item.portfolio_highlights_tekst }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="uk-card uk-card-team">
+  {#{{ dump(buisness_case.get_field('feedback_company_block')[0].photos[0].photo) }}#}
+  <div class="uk-card-image" data-position>
+    <img class="front" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[0].photo }}" alt="">
+    <img class="down-left" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[1].photo }}" alt="">
+    <img class="down-right" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[2].photo }}" alt="">
+    <img class="down" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[3].photo }}" alt="">
+    <img class="left" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[4].photo  }}" alt="">
+    <img class="right" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[5].photo }}" alt="">
+    <img class="top-left" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[6].photo }}" alt="">
+    <img class="top-right" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[7].photo }}" alt="">
+    <img class="top" src="{{ buisness_case.get_field('feedback_company_block')[0].photos[8].photo }}" alt="">
+  </div>
+  <div class="uk-card-body">
+    <div class="uk-card-block">
+      <h4 class="uk-card-title">{{item.title}}</h4>
+      <div class="uk-card-desc">{{ item.sub_title}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+
+<header class="uk-header uk-header-secondary" uk-sticky>
+
+  <div class="uk-container uk-container-expand">
+
+    <nav class="uk-navbar-container uk-navbar-transparent uk-navbar-mobile uk-visible@m" uk-navbar>
+      <div class="uk-navbar-left">
+        <a href="{{ function('home_url', '/') }}" class="uk-logo">
+          <img src="{{ options.navigatie_logo_kleur }}" uk-svg class="uk-logo-red uk-preserve {{ image|default('') }}">
+        </a>
+      </div>
+      <div class="uk-navbar-right">
+        {% include 'components/nav-navbar.twig' %}
+      </div>
+    </nav>
+
+    <nav class="uk-navbar-container uk-navbar-transparent uk-navbar-desktop uk-hidden@m" uk-navbar>
+      <div class="uk-navbar-left">
+        <a href="{{ function('home_url', '/') }}" class="uk-logo">
+          <img src="{{ options.navigatie_logo_kleur }}" uk-svg class="uk-logo-red uk-preserve {{ image|default('') }}">
+        </a>
+      </div>
+      <div class="uk-navbar-right">
+        <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas" href="#">
+          <span uk-navbar-toggle-icon></span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+{% include 'partials/offcanvas.twig' %}

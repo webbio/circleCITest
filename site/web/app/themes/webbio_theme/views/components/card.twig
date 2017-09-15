@@ -1,0 +1,29 @@
+{#{% set vars = {#}
+  {#'offset': '',#}
+  {#'modify': '',#}
+  {#'media': '',#}
+  {#'content': '',#}
+{#} %}#}
+
+<div class="uk-card {{ offset|default('') }} {{ modify|default('') }}">
+  <div class="{{ media|default('uk-card-media-top') }}">
+    <div class="uk-card-image uk-cover-container">
+      <img src="http://placehold.it/960x494" alt="">
+    </div>
+  </div>
+  <div class="uk-card-media-body {{ content|default('') }}">
+    <div class="uk-card-body">
+      <div class="uk-card-block">
+        <div class="uk-label-list">
+          <span class="uk-label">Category 1</span>
+        </div>
+        <div class="uk-card-subtitle">Subtitle</div>
+        <h3 class="uk-card-title">Title</h3>
+        <div class="uk-card-content">Content</div>
+        <div class="uk-card-button">
+          <a href="#" class="uk-button">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

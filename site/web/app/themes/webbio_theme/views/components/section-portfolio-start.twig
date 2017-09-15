@@ -1,0 +1,23 @@
+<div class="uk-section uk-section-portfolio-start">
+  {% set vars = {
+  'class_color_polygon': 'grey',
+  'class_color_svg': 'white',
+  } %}
+  {% include 'components/polygon-bg.twig' with vars %}
+  <div class="uk-section-foreground">
+    <div class="uk-section-body">
+      <div class="uk-container">
+      <div class="uk-child-width-1-2@s" uk-grid>
+        <div>
+          <h2 class="uk-h3">{{ post.get_field('portfolio_start_inhoud_title_1') }}</h2>
+          {{ post.get_field('portfolio_start_inhoud_blok_1') }}
+        </div>
+        <div>
+          <h2 class="uk-h3">{{ post.get_field('portfolio_start_inhoud_title_2') }}</h2>
+          {{ post.get_field('portfolio_start_inhoud_blok_2') }}
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.hook-logo() {
+  display: block;
+  max-width: 182px;
+  width: 100%;
+  margin:0;
+  @media (max-width: @breakpoint-large) {
+    max-width: 107px;
+  }
+  @media (max-width: @breakpoint-medium) {
+    margin: 0;
+  }
+  svg {
+    width: 100%;
+    height: 39px;
+    transition: width 0.15s;
+    .cls-1 {
+      fill: @global-snowwhite;
+      opacity:1;
+    }
+    #webbio-sales-page {
+      fill: @global-snowwhite;
+    }
+  }
+  .uk-color-logo {
+    #webbio-sales-page {
+      fill: @global-brick-red;
+    }
+  }
+  .uk-logo-red .cls-1 {
+    fill: @global-brick-red;
+  }
+}
+.page-template-page-sales .uk-header .uk-logo {
+  max-width:100%;
+}

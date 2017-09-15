@@ -1,0 +1,98 @@
+/*
+ * Normal navigation
+*/
+
+.uk-navbar-nav>li>a {
+	position: relative;
+  	text-decoration: none;
+	color: @global-snowwhite;
+	margin: 0;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 80%;
+		height: 1px;
+		bottom: 0;
+		left: 10%;
+		background-color: @global-snowwhite;
+		visibility: hidden;
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+		-webkit-transition: all 0.2s ease-in-out 0s;
+		transition: all 0.2s ease-in-out 0s;
+		margin-bottom: 20px;
+	}
+	&:hover:before {
+		visibility: visible;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+.uk-navbar-nav>li.uk-active>a:before, .uk-navbar-nav>li>a:active:before {
+	content: "";
+	position: absolute;
+	width: 80%;
+	height: 1px;
+	bottom: 0;
+	left: 10%;
+	background-color: @global-snowwhite;
+	margin-bottom: 20px;
+	visibility: visible!important;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+.uk-navbar-nav>li.uk-active>a, .uk-navbar-nav>li>a:active, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a.uk-open, .uk-navbar-nav>li>a:focus, .uk-navbar-toggle.uk-open, .uk-navbar-toggle:focus, .uk-navbar-toggle:hover {
+	color: @global-snowwhite;
+}
+.uk-navbar-toggle {
+	color: @global-snowwhite;
+}
+
+/*
+ * Offcanvas navigation
+*/
+
+.uk-offcanvas-bar {
+	background: @global-blackcurrant;
+}
+.uk-offcanvas-bar ul {
+	list-style: none;
+	padding: 20px;
+	li {
+		margin:0 0 28px;
+		a {
+			color: @global-snowwhite;
+			font-size: 22px;
+			font-weight: 300;
+		}
+	}
+}
+.uk-offcanvas-bar a:hover, .uk-offcanvas-bar a:active, .uk-offcanvas-bar a:focus {
+	color: @global-brick-red;
+	text-decoration: none;
+}
+.uk-offcanvas-bar .uk-close:hover, .uk-offcanvas-bar .uk-close:active, .uk-offcanvas-bar .uk-close:focus {
+	color: @global-brick-red;
+}
+.uk-offcanvas-bar .uk-close {
+	color: @global-snowwhite;
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.uk-offcanvas-bar li {
+  	line-height: 33px;
+	margin: 0 0 15px;
+}
+.uk-offcanvas-nav {
+	margin-top: 30px;
+}
+.uk-offcanvas-nav .icon-min {
+    color: @global-blackcurrant;
+    font-size: 6px;
+    margin-right: 10px;
+}
+.uk-offcanvas-overlay:before {
+	background: rgba(255,255,255, .5);
+}

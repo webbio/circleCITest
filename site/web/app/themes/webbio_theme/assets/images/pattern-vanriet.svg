@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.293 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>pattern-vanriet</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <path class="cls-1" d="M6.616,0,0,6.616V8.03L8.03,0Zm0,32H8.03l6.616-6.616L21.262,32h1.414l-8.03-8.03Zm8.03-24.03L0,22.616V24.03L14.646,9.384,29.293,24.03h0V22.616h0ZM29.293,6.616,22.677,0H21.263l8.03,8.03h0V6.616Z"/>
+    </g>
+  </g>
+</svg>

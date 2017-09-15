@@ -1,0 +1,15 @@
+<ul class="uk-navbar-nav">
+  {% for item in menu.main.get_items %}
+    <li class="{% if 'current-page-ancestor' in item.classes or 'current-menu-item' in item.classes %}uk-active{% endif %}"><a href="{{item.get_link}}"  class="{% if item.get_children %}uk-dropdown-toggler{% endif %} uk-button uk-button-text">{{item.title}}</a>
+      {% if item.get_children %}
+        <div uk-dropdown="mode: click">
+          <ul class="uk-nav uk-dropdown-nav">
+            {% for child in item.get_children %}
+              <li><a href="{{child.get_link}}">{{child.title}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

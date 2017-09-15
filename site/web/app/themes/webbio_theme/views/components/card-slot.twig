@@ -1,0 +1,60 @@
+{% set item = buisness_case.get_field('slot_block') %}
+<div class="uk-card uk-card-client">
+  <div uk-grid>
+    <div class="uk-width-3-5" style="background-image:url('{{item.image}}');background-position-x: 50%;background-size: cover;">
+      {% if item.youtube_link is empty %}
+        <span class="uk-card-image"></span>
+      {% else %}
+        <div class="uk-card-image uk-card-video" uk-lightbox>
+          <a href="{{item.youtube_link}}" class=""><span class="icon-play"></span></a>
+        </div>
+
+      {% endif %}
+    </div>
+    <div class="uk-width-2-5">
+      <div class="uk-card-block">
+        <div class="uk-card-body">
+          <div class="uk-card-text">
+            <p>{{item.description}} </p>
+          </div>
+          <div class="uk-card-author">
+            <a href="#">{{item.specialist}}</a>
+          </div>
+          <div class="uk-card-list-review">
+            <div class="uk-rating">
+              <div class="uk-rating-symbol">
+                <div class="rating-symbol-background icon-favourites-filled-star-symbol empty" style="visibility: hidden;"></div>
+                <div class="rating-symbol-foreground" style="display: inline-block; position: absolute; overflow: hidden; left: 0px; right: 0px; width: auto;"><span class="icon-favourites-filled-star-symbol"></span></div>
+              </div>
+              <div class="uk-rating-symbol">
+                <div class="rating-symbol-background icon-favourites-filled-star-symbol empty" style="visibility: hidden;"></div>
+                <div class="rating-symbol-foreground" style="display: inline-block; position: absolute; overflow: hidden; left: 0px; right: 0px; width: auto;"><span class="icon-favourites-filled-star-symbol"></span></div>
+              </div>
+              <div class="uk-rating-symbol">
+                <div class="rating-symbol-background icon-favourites-filled-star-symbol empty" style="visibility: hidden;"></div>
+                <div class="rating-symbol-foreground" style="display: inline-block; position: absolute; overflow: hidden; left: 0px; right: 0px; width: auto;"><span class="icon-favourites-filled-star-symbol"></span></div>
+              </div>
+              <div class="uk-rating-symbol">
+                <div class="rating-symbol-background icon-favourites-filled-star-symbol empty" style="visibility: hidden;"></div>
+                <div class="rating-symbol-foreground" style="display: inline-block; position: absolute; overflow: hidden; left: 0px; right: 0px; width: auto;"><span class="icon-favourites-filled-star-symbol"></span></div>
+              </div>
+              <div class="uk-rating-symbol">
+                <div class="rating-symbol-background icon-favourites-filled-star-symbol empty" style="visibility: hidden;"></div>
+                <div class="rating-symbol-foreground" style="display: inline-block; position: absolute; overflow: hidden; left: 0px; right: 0px; width: auto;"><span class="icon-favourites-filled-star-symbol"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-footer">
+          <div class="uk-card-button">
+            <a href="{{ item.url }}" class="uk-btn-link"><span class="icon-arrow-right"></span>{{ item.text_link }}</a>
+            {% if item.button_link is not empty %}
+              <span class="uk-card-divider"></span>
+              <a href="{{item.button_link}}" class="uk-btn uk-btn-primary">{{ item.button_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

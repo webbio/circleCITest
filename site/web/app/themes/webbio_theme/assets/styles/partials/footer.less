@@ -1,0 +1,194 @@
+.uk-footer {
+  position: relative;
+  overflow: hidden;
+}
+  .uk-footer>div {
+    padding:120px 0 80px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    @media (max-width: @breakpoint-medium) {
+      padding:30px 0;
+    }
+    .uk-container-expand {
+      position: relative;
+      z-index: 1;
+    }
+    a {
+      color: @global-greyguard;
+    }
+    .uk-footer-body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      @media (max-width: @breakpoint-small) {
+        flex-direction: column;
+      }
+      .uk-footer-wrap {
+        display: flex;
+        align-items: flex-start;
+        @media (max-width: @breakpoint-small) {
+          flex-direction: column;
+        }
+        .uk-footer-logo {
+          padding-right:120px;
+          @media (max-width: @breakpoint-xlarge) {
+            padding-right:80px;
+          }
+          @media (max-width: @breakpoint-large) {
+            padding-right:35px;
+          }
+          @media (max-width: @breakpoint-small) {
+            margin: 0 0 25px;
+          }
+          .uk-logo {
+            margin: 0;
+          }
+        }
+      }
+      .uk-footer-info {
+        align-items: flex-start;
+        @media (max-width: @breakpoint-medium) {
+          flex-direction: column;
+          margin: 0 0 25px;
+        }
+        .uk-footer-column {
+          padding-right:120px;
+          @media (max-width: @breakpoint-xlarge) {
+            padding-right:80px;
+          }
+          @media (max-width: @breakpoint-large) {
+            padding-right:35px;
+          }
+          @media (max-width: @breakpoint-medium) {
+            margin: 0 0 25px;
+          }
+          > div {
+            color: @global-hintofred;
+            font-size: @global-small-font-size;
+          }
+          a {
+            font-size: @global-medium-font-size;
+            transition: color .3s ease 0s;
+            &:hover {
+              text-decoration: none;
+              color: @global-snowwhite;
+            }
+          }
+        }
+        display: flex;
+      }
+      .uk-footer-media {
+        display: flex;
+      }
+    }
+    .uk-footer-media {
+      align-items: flex-start;
+      @media (max-width: @breakpoint-small) {
+        flex-direction: column;
+        width: 100%;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        a {
+          font-size: @global-small-font-size;
+          transition: color .3s ease 0s;
+          &:hover {
+            text-decoration: none;
+            color: @global-snowwhite;
+          }
+        }
+        &.uk-footer-media-list {
+          padding-left:120px;
+          @media (max-width: @breakpoint-xlarge) {
+            padding-left:80px;
+          }
+          @media (max-width: @breakpoint-large) {
+            padding-left:35px;
+          }
+          @media (max-width: @breakpoint-small) {
+            text-align: center;
+            padding: 0;
+            margin: 25px 0 0;
+            width: 100%;
+          }
+          li {
+            display: inline-block;
+            @media (max-width: @breakpoint-medium) {
+              margin: 0 0 25px;
+              display: block;
+            }
+            @media (max-width: @breakpoint-small) {
+              display: inline-block;
+            }
+            a:hover {
+              text-decoration: none;
+            }
+            span {
+              font-size: 40px;
+              &:hover {
+                color: @global-snowwhite;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .uk-footer-whitepaper {
+    @media (max-width: @breakpoint-small) {
+      .uk-section-footer {
+        text-align: center;
+      }
+    }
+    &.uk-grid {
+      margin: 0;
+    }
+    .uk-footer-whitepaper-body {
+      font-size:@global-small-font-size;
+      .uk-section-subtitle {
+        color: @global-blackcurrant;
+      }
+      .uk-section-title {
+        font-size:@global-large-font-size;
+        color: @global-blackcurrant;
+      }
+    }
+    .uk-footer-info {
+      flex-direction: column;
+      >div {
+        margin:0 0 50px;
+      }
+
+    }
+    .uk-section-footer {
+      a{
+        margin-top: 20px;
+      }
+      a, span:before {
+        color: @global-brick-red;
+      }
+    }
+    .uk-image-footer {
+      top: -250px;
+      right: -44%;
+    }
+  }
+.uk-image-footer {
+  position: absolute;
+  padding: 0 0 50%;
+  top: -320px;
+  right: -30%;
+  z-index: 0;
+  .uk-svg {
+    .cls-2 {
+      fill-opacity:1 !important;
+    }
+  }
+  @media (max-width: @breakpoint-small) {
+    right: -100%;
+  }
+}

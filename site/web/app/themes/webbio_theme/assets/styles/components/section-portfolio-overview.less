@@ -1,0 +1,28 @@
+.hook-section-misc() {
+  .uk-section-portfolio-overview {
+    position: relative;
+    padding:200px 0 170px;
+    @media (max-width: @breakpoint-medium) {
+      padding: 60px 0 80px;
+    }
+    @media (max-width: @breakpoint-small) {
+      .uk-card-portfolio{
+        max-width:400px;
+        margin: 0 auto;
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+  body.portfolio {
+    .uk-section-portfolio-overview {
+      padding:100px 0 150px;
+      .uk-card-portfolio {
+        @media (max-width: @breakpoint-small) {
+          margin: 0 auto 30px;
+        }
+      }
+    }
+  }
+}
