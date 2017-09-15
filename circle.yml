@@ -16,15 +16,10 @@ dependencies:
     # Allow ansible playbooks to be run
     - pip install ansible
     # Turn an environment variable into a vault file that ansible can read
-    - cd ../trellis && echo "${ANSIBLE_VAULT_PASSWORD}" > .vault_pass
+    - cd trellis && echo "${ANSIBLE_VAULT_PASSWORD}" > .vault_pass
   # This _should_ be inferred by Circle CI as we specify a node version but for some reason, it never ran for me. This tells it explicitly to run.
   override:
     - npm install
-
-test:
-  # Again, this _should_ be inferred by Circle CI but wasn't.
-  override:
-    - npm run test
 
 # Deployment Scenarios
 deployment:
