@@ -1,10 +1,13 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
+# # PHP CircleCI 2.0 configuration file
+# #
+# # Check https://circleci.com/docs/2.0/language-php/ for more details
+# #
 version: 2
 jobs:
   build:
+    machine:
+      enabled: true
+    
     working_directory: site
 
     timezone:
@@ -19,7 +22,6 @@ jobs:
         - master
 
     steps:
-      - dependencies
         - run:
             name: "Install Gulp"
             command: npm install gulp -g
@@ -29,6 +31,5 @@ jobs:
         - run:
             name: "Install Ansible"
             command: pip install ansible
-      - deploy:
-          command: cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
-
+        - deploy:
+            command: cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
