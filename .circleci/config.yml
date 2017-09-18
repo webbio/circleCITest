@@ -7,6 +7,8 @@ jobs:
   build:
     machine:
       enabled: true
+    
+    working_directory: /
 
     timezone:
       Europe/Amsterdam
@@ -31,4 +33,4 @@ jobs:
             command: pip install ansible
         - checkout
         - deploy:
-            command: cd ../../project/trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
+            command: cd ../trellis && ansible-playbook deploy.yml -e "site=webbio-staging.nl env=staging" -i hosts/staging --skip-tags "skip-using-ci" -vvv
